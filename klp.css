@@ -1,0 +1,128 @@
+/* Styling untuk seluruh halaman */
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling Navbar */
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #007bff; /* Warna biru untuk link navbar */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #0056b3; /* Warna biru gelap untuk hover */
+}
+
+.navbar-light .navbar-brand {
+  color: #007bff;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #0056b3;
+}
+
+/* Styling Sidebar */
+#sidebar {
+  position: fixed;
+  top: 56px; /* Di bawah navbar */
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+}
+
+#sidebar h4 {
+  color: white;
+}
+
+#sidebar a {
+  color: #e3f2fd; /* Warna biru muda untuk link */
+}
+
+#sidebar a:hover {
+  color: #c1d3fc; /* Warna biru lebih muda untuk hover */
+}
+
+/* Styling Main Content */
+#main-content {
+  margin-left: 220px; /* Menggeser konten utama agar tidak tertutup sidebar */
+  padding: 20px;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.spacing {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styling Card */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  color: #007bff;
+}
+
+.card-text {
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004494;
+}
+
+/* Styling Circle */
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+/* Styling Audio Element */
+audio {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Styling Footer */
+footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  color:#333;
+}

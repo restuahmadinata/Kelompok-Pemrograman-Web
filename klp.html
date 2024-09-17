@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Website Sederhana</title>
+    <!-- Menggunakan Bootstrap CSS -->
+    <link rel="stylesheet" href="klp.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar responsif dengan Bootstrap dan dropdown menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Beranda</a>
+            </li>
+            <!-- Dropdown menu -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Aksi</a></li>
+                <li><a class="dropdown-item" href="#">Lainnya</a></li>
+              </ul>
+            </li>
+            <!-- Link ke Sikola V2 -->
+            <li class="nav-item">
+              <a class="nav-link" href="https://sikola-v2.com">Sikola V2</a>
+            </li>
+          </ul>
+          <!-- Form dengan placeholder dan atribut required -->
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+              required
+            />
+            <button class="btn btn-outline-success" type="submit">Cari</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <h4>Sidebar</h4>
+      <ul class="list-unstyled">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </div>
+
+    <!-- Konten Utama -->
+    <div id="main-content">
+      <!-- Section dan Article -->
+      <section>
+        <article>
+          <h2 class="uppercase-text">Judul Artikel</h2>
+          <p class="spacing">
+            Ini adalah artikel di dalam sebuah section. Teks ini menggunakan
+            huruf besar dan memiliki spasi yang diatur dengan CSS.
+          </p>
+        </article>
+      </section>
+
+      <!-- Layout grid dengan 3 kolom menggunakan Bootstrap -->
+      <div class="row">
+        <div class="col-md-4">
+          <!-- Card Bootstrap -->
+          <div class="card">
+            <img src="Ambaboy.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Judul Card 1</h5>
+              <p class="card-text">Contoh teks pada card.</p>
+              <a href="#" class="btn btn-primary">Primary Button</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Card Bootstrap -->
+          <div class="card">
+            <img src="Ambaboy.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Judul Card 2</h5>
+              <p class="card-text">Contoh teks pada card.</p>
+              <a href="#" class="btn btn-primary">Primary Button</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Lingkaran sempurna dengan CSS -->
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <!-- Elemen Audio -->
+      <audio controls class="spacing">
+        <source src="audiofile.mp3" type="audio/mpeg" />
+        Browser Anda tidak mendukung elemen audio.
+      </audio>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-lg-start">
+      <div class="container">
+        <p>Konten Footer</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS dan dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
