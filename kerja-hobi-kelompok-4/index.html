@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemrograman Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "JetBrains Mono", monospace;
+            
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000317;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .data-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        #profile {
+            background-color: #000317;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border: 1px solid #8398ff61;
+        }
+
+        #profileData {
+            white-space: pre-wrap;
+        }
+
+        .red-btn {
+            background-color: #f44336;
+            color: #fff;
+            width: 223px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .red-btn:hover {
+            background-color: #be342b;
+        }
+
+
+        .blue-btn {
+            width: 223px;
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .blue-btn:hover {
+            background-color: #0d8bf2;
+        }
+
+        .job-button {
+            width: 223px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .job-button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            background-color: tra;
+            border-bottom: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .job-manipulation-container,
+        .add-hobby-container,
+        .delete-hobby-container {
+            background-color: transparent;
+            padding: 15px 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        #profileData {
+            font-size: 14px;
+            font-family: "JetBrains Mono", monospace;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="data-container">
+        <h2>DATA PROFILE</h2>
+        <div id="profile">
+            <pre id="profileData">
+                {
+                    "firstName": "Ahmad",
+                    "lastName": "Iffat",
+                    "age": 21,
+                    "hobbies": [
+                        "Reading",
+                        "Football",
+                        "Swimming",
+                        "Cycling",
+                        "Fishing"
+                    ],
+                    "job": "Mahasiswa"
+                }
+            </pre>
+        </div>
+    </div>
+
+    <h2>MANIPULASI DATA PROFILE</h2>
+
+    <center>
+    <div class="container">
+        <!-- Pekerjaan -->
+        <div class="job-manipulation-container">
+            <label for="jobInput">Tambahkan Pekerjaan:</label>
+            <input type="text" id="jobInput" placeholder="Masukkan Pekerjaan">
+            <button class="job-button" onclick="addJob()">Tambahkan Pekerjaan</button>
+        </div>
+        
+        <!-- Hobi -->
+        <div class="add-hobby-container">
+            <label for="hobbyInput">Tambahkan Hobi:</label>
+            <input type="text" id="hobbyInput" placeholder="Memancing"><br>
+            <button class="blue-btn" onclick="addHobby('start')">Tambahkan di Awal</button>
+            <button class="blue-btn" onclick="addHobby('middle')">Tambahkan di Tengah</button>
+            <button class="blue-btn" onclick="addHobby('end')">Tambahkan di Akhir</button>
+
+        </div>
+
+        <!-- Hapus Hobi -->
+        <div class="delete-hobby-container">
+            <label for="hobbyDelete">Hapus Hobi:</label>
+            <input type="text" id="hobbyDelete" placeholder="Memancing"><br>
+            <button class="red-btn" onclick="deleteHobby()">Hapus Hobi</button>
+        </div>
+    </div>
+    </center>
+
+    <script>
+        // Inisialisasi data profil sebagai objek JavaScript
+        let profile = {
+            "firstName": "Ahmad",
+            "lastName": "Iffat",
+            "age": 21,
+            "hobbies": [
+                "Reading",
+                "Football",
+                "Swimming",
+                "Cycling",
+                "Fishing"
+            ],
+            "job": "Mahasiswa"
+        };
+
+        // Fungsi untuk memperbarui tampilan data profil
+        function updateDisplay() {
+            const profileData = document.getElementById('profileData');
+            profileData.textContent = JSON.stringify(profile, null, 4);
+        }
+
+        // Fungsi untuk menambahkan pekerjaan
+        function addJob() {
+            const jobInput = document.getElementById('jobInput');
+            const newJob = jobInput.value.trim();
+
+            if (newJob === "") {
+                alert("Silakan masukkan pekerjaan yang valid.");
+                return;
+            }
+
+            profile.job = newJob;
+            updateDisplay();
+            jobInput.value = "";
+        }
+
+        // Fungsi untuk menambahkan hobi
+        function addHobby(position) {
+            const hobbyInput = document.getElementById('hobbyInput');
+            const newHobby = hobbyInput.value.trim();
+
+            if (newHobby === "") {
+                alert("Silakan masukkan hobi yang valid.");
+                return;
+            }
+
+            switch(position) {
+                case 'start':
+                    profile.hobbies.unshift(newHobby);
+                    break;
+                case 'end':
+                    profile.hobbies.push(newHobby);
+                    break;
+                case 'middle':
+                    const middleIndex = Math.floor(profile.hobbies.length / 2);
+                    profile.hobbies.splice(middleIndex, 0, newHobby);
+                    break;
+                default:
+                    alert("Posisi tidak dikenal.");
+                    return;
+            }
+
+            updateDisplay();
+            hobbyInput.value = "";
+        }
+
+        // Fungsi untuk menghapus hobi
+        function deleteHobby() {
+            const hobbyDelete = document.getElementById('hobbyDelete');
+            const hobbyToDelete = hobbyDelete.value.trim();
+
+            if (hobbyToDelete === "") {
+                alert("Silakan masukkan hobi yang ingin dihapus.");
+                return;
+            }
+
+            const index = profile.hobbies.indexOf(hobbyToDelete);
+            if (index === -1) {
+                alert(`Hobi "${hobbyToDelete}" tidak ditemukan.`);
+                return;
+            }
+
+            profile.hobbies.splice(index, 1);
+            updateDisplay();
+            hobbyDelete.value = "";
+        }
+
+        // Panggil updateDisplay saat halaman dimuat untuk memastikan tampilan awal sesuai dengan objek JavaScript
+        window.onload = updateDisplay;
+    </script>
+</body>
+</html>
